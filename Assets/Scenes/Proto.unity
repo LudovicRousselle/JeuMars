@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 325426755}
   - component: {fileID: 325426754}
   - component: {fileID: 325426753}
-  - component: {fileID: 325426757}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Stone
@@ -374,22 +373,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &325426757
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325426752}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &509304625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7706885286288786341, guid: 88501c2015ecd184ca309991b4d6e28c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 7706885286288786341, guid: 88501c2015ecd184ca309991b4d6e28c, type: 3}
       propertyPath: m_LocalRotation.w

@@ -6,7 +6,7 @@ public class BallSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject balle;
-    [SerializeField] float radius = 1f;
+    [SerializeField] public float radius = 1f;
     [SerializeField] public int amountToSpawn;
     [SerializeField] public  int forceStrenght;
 
