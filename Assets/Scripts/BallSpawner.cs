@@ -6,9 +6,9 @@ public class BallSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject balle;
-    float radius = 1f;
-    [SerializeField] int amountToSpawn;
-    [SerializeField] int forceStrenght;
+    [SerializeField] float radius = 1f;
+    [SerializeField] public int amountToSpawn;
+    [SerializeField] public  int forceStrenght;
 
     // Update is called once per frame
     void Update()
