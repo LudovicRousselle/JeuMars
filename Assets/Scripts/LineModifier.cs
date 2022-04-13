@@ -6,8 +6,8 @@ public class LineModifier : MonoBehaviour
 {
     private void Start()
     {
-        GameObject lineRadius = GameObject.Find("BallSpawner");
-        BallSpawner ballSpawner = lineRadius.GetComponent<BallSpawner>();
+
+        BallSpawner ballSpawner = GetComponent<BallSpawner>();
         ballSpawner.radius = 1;
         ballSpawner.amountToSpawn = 16;
         ballSpawner.forceStrenght = 1500;
@@ -19,8 +19,7 @@ public class LineModifier : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        GameObject lineRadius = GameObject.Find("BallSpawner");
-        BallSpawner ballSpawner = lineRadius.GetComponent<BallSpawner>();
+        BallSpawner ballSpawner = GetComponent<BallSpawner>();
 
         if (collision.gameObject.tag == "Stone")
         {
@@ -28,14 +27,28 @@ public class LineModifier : MonoBehaviour
             ballSpawner.radius = 1;
             ballSpawner.amountToSpawn = 16;
             ballSpawner.forceStrenght = 1500;
+            ballSpawner.targetTime = 1;
+            ballSpawner.destroyTime = 1f;
         }
 
-        if (collision.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Dirt")
         {
             Debug.Log("truc2");
             ballSpawner.radius = 3;
             ballSpawner.amountToSpawn = 8;
             ballSpawner.forceStrenght = 500;
+            ballSpawner.targetTime = 1;
+            ballSpawner.destroyTime = 0.5f;
+        }
+
+        if (collision.gameObject.tag == "Water")
+        {
+            Debug.Log("truc2");
+            ballSpawner.radius = 0.2f;
+            ballSpawner.amountToSpawn = 16;
+            ballSpawner.forceStrenght = 200;
+            ballSpawner.targetTime = 1;
+            ballSpawner.destroyTime = 3f;
         }
     }
 }
