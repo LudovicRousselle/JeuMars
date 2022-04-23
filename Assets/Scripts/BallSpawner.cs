@@ -5,16 +5,20 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
 
-    [SerializeField] GameObject balle;
-    [SerializeField] public float radius = 1f;
-    [SerializeField] public int amountToSpawn;
-    [SerializeField] public int forceStrenght;
-    [SerializeField] public float targetTime;
-    [SerializeField] public float destroyTime ;
+    [SerializeField] private GameObject balle;
+    public float radius = 1f;
+    public int amountToSpawn;
+    public int forceStrenght;
+    public float targetTime;
+    public float destroyTime ;
 
-    private float remainingTime;
+    [SerializeField] private float remainingTime;
 
     Rigidbody rb;
+
+    //Audio
+
+    public AudioSource audioPlay;
 
     void Start()
     {
@@ -46,6 +50,8 @@ public class BallSpawner : MonoBehaviour
                 go.GetComponent<Rigidbody>().AddForce(newPos * forceStrenght);
                 Destroy(go, destroyTime);
                 remainingTime = targetTime;
+
+                audioPlay.Play();
             }
         }
     }

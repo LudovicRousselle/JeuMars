@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LineModifier : MonoBehaviour
 {
+    [SerializeField] private AudioSource dirtSound;
+    [SerializeField] private AudioSource WaterSound;
+    [SerializeField] private AudioSource stoneSound;
+
+
+
     private void Start()
     {
-
         BallSpawner ballSpawner = GetComponent<BallSpawner>();
         ballSpawner.radius = 1;
         ballSpawner.amountToSpawn = 16;
@@ -29,6 +34,8 @@ public class LineModifier : MonoBehaviour
             ballSpawner.forceStrenght = 1500;
             ballSpawner.targetTime = 1;
             ballSpawner.destroyTime = 1f;
+
+            ballSpawner.audioPlay = stoneSound;
         }
 
         if (collision.gameObject.tag == "Dirt")
@@ -39,6 +46,8 @@ public class LineModifier : MonoBehaviour
             ballSpawner.forceStrenght = 500;
             ballSpawner.targetTime = 1;
             ballSpawner.destroyTime = 0.5f;
+
+            ballSpawner.audioPlay = dirtSound;
         }
 
         if (collision.gameObject.tag == "Water")
@@ -49,6 +58,8 @@ public class LineModifier : MonoBehaviour
             ballSpawner.forceStrenght = 200;
             ballSpawner.targetTime = 1;
             ballSpawner.destroyTime = 3f;
+
+            ballSpawner.audioPlay = WaterSound;
         }
     }
 }
