@@ -7,6 +7,7 @@ TagManager:
   - Stone
   - Water
   - Dirt
+  - Reward
   layers:
   - Default
   - TransparentFX
