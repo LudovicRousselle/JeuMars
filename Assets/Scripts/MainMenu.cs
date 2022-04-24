@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     private void Start()
     {
         
     }
 
-    void PlayWithDelay()
+    public void PlayWithDelay()
     {
-        Invoke("Play", 2);
+        Invoke("Play", 1);
     }
 
-    void play()
+    public void Play()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("Main");
     }
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
